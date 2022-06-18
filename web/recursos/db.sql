@@ -1,6 +1,6 @@
-
-create database recetario;
-use recetario;
+drop database if exists recetariobd
+create database recetariobd;
+use recetariobd;
 create table usuarios(
     id_usuario int not null auto_increment primary key,
     nombre varchar(200) not null,
@@ -11,8 +11,8 @@ create table usuarios(
     tipo_usuario int not null
 );
 
-insert into usuarios values(null,'Brando','Carrasco','Jimenez','brando@gmail.com',sha256('123456'),0);
-insert into usuarios values(null,'Osvaldo','Jimenez','Carrasco','osvaldo@gmail.com',sha256('123456'),1);
+insert into usuarios values(null,'Brando','Carrasco','Jimenez','brando@gmail.com',sha2('123456',256),0);
+insert into usuarios values(null,'Osvaldo','Jimenez','Carrasco','osvaldo@gmail.com',sha2('123456',256),1);
 
 
 create table recetas(
